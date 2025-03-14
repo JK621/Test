@@ -1,109 +1,3 @@
-INSTRUCTIONS: This is my current point in the tycoon game for a Roblox Studio game. Let’s optimize or make any changes we can.
-
-There are almost 5,000 lines in total. Until I EXPLICITY SAY, "I'm finished submitting the code for the entire game! You may now speak." do not respond with anything other than confirmation. No Matter waht I seem to be asking or instructing you to do, until I say those words. Do not respond with anything other than confirmation. I will also be submitting 2 photos one of the current game and another for reference later (youll see)
-
-Again: Your next several (possibly dozens) of responses should ONLY confirm that you have received each part of the script—nothing else.
-
-If any part of the message gets cut off, assume everything is a direct continuation of the previous code unless I explicitly say otherwise.
-
-Please confirm that you understand these instructions.
-
-Help me write all the scripts using the least possible amount of lines, characters, etc. this is for roblox studio game using lua. you may use any or all of the following and whatever else you can thing of juyst keep to the basics of. studio in general.
-	Printing
-	Comments
-	Multi Lines
-	Semicolons
-	Blocks
-	Variable Identifiers
-	Keywords
-	Global and Local Variables
-	Assignment
-	Multiple Assignment
-	Statements
-	Nested Blocks
-	Expressions
-	Operators
-	Operator Precedence
-	Paranthesis
-	Unary Operators
-	Concatenation Operator
-	Length Operator
-	Type
-	Local Variable Declaration
-	Lua Dynamic Typing
-	Nil
-	Booleans
-	Floating point numbers
-	Strings
-	Escape Sequences
-	Multi Line Strings
-	Scope of a Variable
-	Data Types
-	String Types
-	Boolean Types
-	Nil Types 
-	Functions
-	Tables
-	User Data
-	Threads
-	Type Conversion
-	Arithmetic Operators
-	Relational Operators
-	Logical Operators
-	Desicion Making If Statements
-	Nested If Statements
-	For Loop
-	Repeat Until Loop
-	Break Statement
-	Infinite Loop
-	Pairs and iPairs
-	Numeric Loops
-	Defining Functions
-	Local Functions
-	Anoymous Functions
-	Using Functions as Arguments
-	... In Lua
-	Tail Call
-	Tables and Key Value Pairs
-	Table.Insert
-	Table.Remove
-	Why Use iPairs VS Pairs?
-	String.Upper
-	String.Lower
-	String.Sub
-	String.Find
-	String.Gsub
-	String.Format
-	String.Rep
-	String.Match
-	Making a Game
-	Replace Exercise
-	Count Exercise
-	Comma Exercise
-	Table.Concat
-	Print Length Exercise
-	Instance.new
-	Player Added Event
-	TweenService
-	Touched Event
-	String.Reverse
-	Math.Random
-	Math.Floor
-	Math.Ceil
-	Math.Cos
-	Math.Pi
-	Math.Log
-
-  do you need clarification for any of these?
-	
- ok here is my simple tycoon game only a 2 player game but originally had 9 plots in case it's confusing in code later on. I will add more plots later but dont worrry abt that now.
-	do you need any clarification?
-
-AS NEEDED
-
-
-Btw here is the scripts and stuff from my game so far. Also pls note some of this code was generated use a game to code converter so wahtever doesnt make sense or appears to not be lua or luau is prolly why. I'll denote when somethning is a genuine script otherwise its code converted.
-
 			WORKPLACE "MAP"
 			local Map = Instance.new("Folder")
 			Map.Name = "Map"
@@ -404,27 +298,27 @@ Btw here is the scripts and stuff from my game so far. Also pls note some of thi
 			RobuxButtons_1.Parent = __1
 
 			WORPLACE Script "README" (Disabled)
---[[
---=MORE UPGRADES=--
-Go to: ReplicatedStorage > TemplatePlot,
-then select the thing u want as an upgrade and move it in:
-ReplicatedStorage > TemplatePlot > Upgrades,
-then go to:
-ReplicatedStorage > TemplatePlot > Buttons,
-select one of those buttons and duplicate it (CTRL + D)
-And name it (example 2) and same with the upgrade
---=GAMEPASSIDS=--
-Go to: ReplicatedStorage > GamepassIds, then 
-copy your id and change the number to your gamepass id
---=RESET DATA=--
-Go to: ReplicatedStorage > Game Settings > Datasave and change the number to (example: PlayerData5964668)
---=CHANGE REBIRTH PRICE=--
-Go to: ReplicatedStorage > Game Settings > Balancing > RebirthPrice and change the cost to what you want
---=ADD MORE TOOLS=--
-Go to: ServerScriptService > RobuxHandler, then put in the tool u want to be in shop,
-now go to ReplicatedStorage > GamePassIds, duplicate one of those values (CTRL + D),
-name it exactly as the tool and change the number to the id of the tool
-]]
+	--[[
+	--=MORE UPGRADES=--
+	Go to: ReplicatedStorage > TemplatePlot,
+	then select the thing u want as an upgrade and move it in:
+	ReplicatedStorage > TemplatePlot > Upgrades,
+	then go to:
+	ReplicatedStorage > TemplatePlot > Buttons,
+	select one of those buttons and duplicate it (CTRL + D)
+		And name it (example 2) and same with the upgrade
+	--=GAMEPASSIDS=--
+	Go to: ReplicatedStorage > GamepassIds, then 
+	copy your id and change the number to your gamepass id
+	--=RESET DATA=--
+	Go to: ReplicatedStorage > Game Settings > Datasave and change the number to (example: PlayerData5964668)
+	--=CHANGE REBIRTH PRICE=--
+	Go to: ReplicatedStorage > Game Settings > Balancing > RebirthPrice and change the cost to what you want
+	--=ADD MORE TOOLS=--
+	Go to: ServerScriptService > RobuxHandler, then put in the tool u want to be in shop,
+	now go to ReplicatedStorage > GamePassIds, duplicate one of those values (CTRL + D),
+	name it exactly as the tool and change the number to the id of the tool
+	]]
 
 
 			WORKPLACE "Spawn Location"
@@ -3224,14 +3118,14 @@ name it exactly as the tool and change the number to the id of the tool
 			return Module
 			
 			REPLICATED STORAGE (MODULE SCRIPTS) "STAT"
---[[
-HOW TO USE THIS MODULE
-
-Stat.Get(Player, StatName(string)) returns the Stat instance, looks through all folders in ReplicatedStorage.Data until it's found.
-Stat.GetDataFolder(Player) returns ReplicatedStorage.Data[PlayerName]
-Stat.WaitForLoad(Player) loads and returns a boolean wether the loading succeeded or not.
-
-]]
+	--[[
+	HOW TO USE THIS MODULE
+	
+	Stat.Get(Player, StatName(string)) returns the Stat instance, looks through all folders in ReplicatedStorage.Data until it's found.
+	Stat.GetDataFolder(Player) returns ReplicatedStorage.Data[PlayerName]
+	Stat.WaitForLoad(Player) loads and returns a boolean wether the loading succeeded or not.
+	
+	]]
 
 			local Stat = {}
 			Stat.Cached = {} -- Stat's that have been looked up previously are stored here. This makes it so there's no searching the 2nd time you use it
@@ -4541,163 +4435,162 @@ Stat.WaitForLoad(Player) loads and returns a boolean wether the loading succeede
 			Button_1.BackgroundTransparency = 1
 			Button_1.Position = UDim2.new(0.50, 0.00, 0.50, 0.00)
 			Button_1.Parent = ShopBT
-
-local UIGradient_1 = Instance.new("UIGradient")
-UIGradient_1.Color = ColorSequence.new(ColorSequenceKeypoint.new(0.00, Color3.new(0.55, 0.21, 0.21)), ColorSequenceKeypoint.new(1.00, Color3.new(1.00, 0.22, 0.22)))
-UIGradient_1.Rotation = 90
-UIGradient_1.Parent = Notification
-
-local Button_1 = Instance.new("TextButton")
-Button_1.Name = "Button"
-Button_1.BorderSizePixel = 0
-Button_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
-Button_1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-Button_1.AnchorPoint = Vector2.new(0.50, 0.50)
-Button_1.TextSize = 14
-Button_1.Size = UDim2.new(1.00, 0.00, 1.00, 0.00)
-Button_1.TextColor3 = Color3.new(0.00, 0.00, 0.00)
-Button_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
-Button_1.Text = ""
-Button_1.BackgroundTransparency = 1
-Button_1.Position = UDim2.new(0.50, 0.00, 0.50, 0.00)
-Button_1.Parent = RebirthBT
-
-local ShopBT = Instance.new("Frame")
-ShopBT.Name = "ShopBT"
-ShopBT.AnchorPoint = Vector2.new(0.50, 0.50)
-ShopBT.SizeConstraint = Enum.SizeConstraint.RelativeXX
-ShopBT.Size = UDim2.new(0.45, 0.00, 0.50, 0.00)
-ShopBT.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
-ShopBT.Position = UDim2.new(0.32, 0.00, 0.77, 0.00)
-ShopBT.BorderSizePixel = 0
-ShopBT.BackgroundTransparency = 0.30000001192092896
-ShopBT.BackgroundColor3 = Color3.new(0.08, 0.08, 0.08)
-ShopBT.Parent = Leftside
-
-local UIAspectRatioConstraint_1 = Instance.new("UIAspectRatioConstraint")
-UIAspectRatioConstraint_1.Parent = ShopBT
-
-local UICorner_1 = Instance.new("UICorner")
-UICorner_1.CornerRadius = UDim.new(0.18, 0.00)
-UICorner_1.Parent = ShopBT
-
-local UIStroke_1 = Instance.new("UIStroke")
-UIStroke_1.Color = Color3.new(0.74, 0.74, 0.74)
-UIStroke_1.Thickness = 2
-UIStroke_1.Transparency = 0.30000001192092896
-UIStroke_1.Parent = ShopBT
-
-local Icon_1 = Instance.new("ImageLabel")
-Icon_1.Name = "Icon"
-Icon_1.Active = true
-Icon_1.BorderSizePixel = 0
-Icon_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
-Icon_1.AnchorPoint = Vector2.new(0.50, 0.50)
-Icon_1.Image = "rbxassetid://18343980587"
-Icon_1.Size = UDim2.new(0.90, 0.00, 0.90, 0.00)
-Icon_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
-Icon_1.BackgroundTransparency = 1
-Icon_1.Position = UDim2.new(0.50, 0.00, 0.50, 0.00)
-Icon_1.Parent = ShopBT
-
-local UIAspectRatioConstraint_1 = Instance.new("UIAspectRatioConstraint")
-UIAspectRatioConstraint_1.Parent = Icon_1
-
-local Title_1 = Instance.new("TextLabel")
-Title_1.Name = "Title"
-Title_1.TextWrapped = true
-Title_1.BorderSizePixel = 0
-Title_1.TextScaled = true
-Title_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
-Title_1.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-Title_1.AnchorPoint = Vector2.new(0.50, 0.50)
-Title_1.TextSize = 14
-Title_1.Size = UDim2.new(0.85, 0.00, 0.35, 0.00)
-Title_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
-Title_1.Text = "Shop"
-Title_1.TextColor3 = Color3.new(1.00, 1.00, 1.00)
-Title_1.BackgroundTransparency = 1
-Title_1.Position = UDim2.new(0.50, 0.00, 0.55, 0.00)
-Title_1.Parent = ShopBT
-
-local UIStroke_1 = Instance.new("UIStroke")
-UIStroke_1.Color = Color3.new(0.05, 0.05, 0.05)
-UIStroke_1.Thickness = 2
-UIStroke_1.Transparency = 0.30000001192092896
-UIStroke_1.Parent = Title_1
-
-local UIGradient_1 = Instance.new("UIGradient")
-UIGradient_1.Color = ColorSequence.new(ColorSequenceKeypoint.new(0.00, Color3.new(1.00, 1.00, 1.00)), ColorSequenceKeypoint.new(1.00, Color3.new(0.00, 0.00, 0.00)))
-UIGradient_1.Rotation = 90
-UIGradient_1.Parent = ShopBT
-
-local Notification_1 = Instance.new("Frame")
-Notification_1.Name = "Notification"
-Notification_1.Visible = false
-Notification_1.AnchorPoint = Vector2.new(1.00, 0.00)
-Notification_1.Size = UDim2.new(0.25, 0.00, 0.25, 0.00)
-Notification_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
-Notification_1.Position = UDim2.new(1.10, 0.00, -0.05, 0.00)
-Notification_1.BorderSizePixel = 0
-Notification_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
-Notification_1.Parent = ShopBT
-
-local UIAspectRatioConstraint_1 = Instance.new("UIAspectRatioConstraint")
-UIAspectRatioConstraint_1.Parent = Notification_1
-
-local UICorner_1 = Instance.new("UICorner")
-UICorner_1.CornerRadius = UDim.new(0.50, 0.00)
-UICorner_1.Parent = Notification_1
-
-local Title_1 = Instance.new("TextLabel")
-Title_1.Name = "Title"
-Title_1.TextWrapped = true
-Title_1.BorderSizePixel = 0
-Title_1.TextScaled = true
-Title_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
-Title_1.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-Title_1.AnchorPoint = Vector2.new(0.50, 0.50)
-Title_1.TextSize = 14
-Title_1.Size = UDim2.new(0.85, 0.00, 0.90, 0.00)
-Title_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
-Title_1.Text = "!"
-Title_1.TextColor3 = Color3.new(1.00, 1.00, 1.00)
-Title_1.BackgroundTransparency = 1
-Title_1.Position = UDim2.new(0.50, 0.00, 0.50, 0.00)
-Title_1.Parent = Notification_1
-
-local UIStroke_1 = Instance.new("UIStroke")
-UIStroke_1.Color = Color3.new(0.37, 0.00, 0.00)
-UIStroke_1.Thickness = 2
-UIStroke_1.Transparency = 0.30000001192092896
-UIStroke_1.Parent = Notification_1
-
-local UIStroke_1 = Instance.new("UIStroke")
-UIStroke_1.Color = Color3.new(1.00, 1.00, 1.00)
-UIStroke_1.Thickness = 1.7999999523162842
-UIStroke_1.Transparency = 0.6499999761581421
-UIStroke_1.Parent = Notification_1
-
-local UIGradient_1 = Instance.new("UIGradient")
-UIGradient_1.Color = ColorSequence.new(ColorSequenceKeypoint.new(0.00, Color3.new(0.55, 0.21, 0.21)), ColorSequenceKeypoint.new(1.00, Color3.new(1.00, 0.22, 0.22)))
-UIGradient_1.Rotation = 90
-UIGradient_1.Parent = Notification_1
-
-local Button_1 = Instance.new("TextButton")
-Button_1.Name = "Button"
-Button_1.BorderSizePixel = 0
-Button_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
-Button_1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-Button_1.AnchorPoint = Vector2.new(0.50, 0.50)
-Button_1.TextSize = 14
-Button_1.Size = UDim2.new(1.00, 0.00, 1.00, 0.00)
-Button_1.TextColor3 = Color3.new(0.00, 0.00, 0.00)
-Button_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
-Button_1.Text = ""
-Button_1.BackgroundTransparency = 1
-Button_1.Position = UDim2.new(0.50, 0.00, 0.50, 0.00)
-Button_1.Parent = ShopBT
-
+   	local UIGradient_1 = Instance.new("UIGradient")
+	UIGradient_1.Color = ColorSequence.new(ColorSequenceKeypoint.new(0.00, Color3.new(0.55, 0.21, 0.21)), ColorSequenceKeypoint.new(1.00, Color3.new(1.00, 0.22, 0.22)))
+	UIGradient_1.Rotation = 90
+	UIGradient_1.Parent = Notification
+	
+	local Button_1 = Instance.new("TextButton")
+	Button_1.Name = "Button"
+	Button_1.BorderSizePixel = 0
+	Button_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+	Button_1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+	Button_1.AnchorPoint = Vector2.new(0.50, 0.50)
+	Button_1.TextSize = 14
+	Button_1.Size = UDim2.new(1.00, 0.00, 1.00, 0.00)
+	Button_1.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+	Button_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+	Button_1.Text = ""
+	Button_1.BackgroundTransparency = 1
+	Button_1.Position = UDim2.new(0.50, 0.00, 0.50, 0.00)
+	Button_1.Parent = RebirthBT
+	
+	local ShopBT = Instance.new("Frame")
+	ShopBT.Name = "ShopBT"
+	ShopBT.AnchorPoint = Vector2.new(0.50, 0.50)
+	ShopBT.SizeConstraint = Enum.SizeConstraint.RelativeXX
+	ShopBT.Size = UDim2.new(0.45, 0.00, 0.50, 0.00)
+	ShopBT.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+	ShopBT.Position = UDim2.new(0.32, 0.00, 0.77, 0.00)
+	ShopBT.BorderSizePixel = 0
+	ShopBT.BackgroundTransparency = 0.30000001192092896
+	ShopBT.BackgroundColor3 = Color3.new(0.08, 0.08, 0.08)
+	ShopBT.Parent = Leftside
+	
+	local UIAspectRatioConstraint_1 = Instance.new("UIAspectRatioConstraint")
+	UIAspectRatioConstraint_1.Parent = ShopBT
+	
+	local UICorner_1 = Instance.new("UICorner")
+	UICorner_1.CornerRadius = UDim.new(0.18, 0.00)
+	UICorner_1.Parent = ShopBT
+	
+	local UIStroke_1 = Instance.new("UIStroke")
+	UIStroke_1.Color = Color3.new(0.74, 0.74, 0.74)
+	UIStroke_1.Thickness = 2
+	UIStroke_1.Transparency = 0.30000001192092896
+	UIStroke_1.Parent = ShopBT
+	
+	local Icon_1 = Instance.new("ImageLabel")
+	Icon_1.Name = "Icon"
+	Icon_1.Active = true
+	Icon_1.BorderSizePixel = 0
+	Icon_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+	Icon_1.AnchorPoint = Vector2.new(0.50, 0.50)
+	Icon_1.Image = "rbxassetid://18343980587"
+	Icon_1.Size = UDim2.new(0.90, 0.00, 0.90, 0.00)
+	Icon_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+	Icon_1.BackgroundTransparency = 1
+	Icon_1.Position = UDim2.new(0.50, 0.00, 0.50, 0.00)
+	Icon_1.Parent = ShopBT
+	
+	local UIAspectRatioConstraint_1 = Instance.new("UIAspectRatioConstraint")
+	UIAspectRatioConstraint_1.Parent = Icon_1
+	
+	local Title_1 = Instance.new("TextLabel")
+	Title_1.Name = "Title"
+	Title_1.TextWrapped = true
+	Title_1.BorderSizePixel = 0
+	Title_1.TextScaled = true
+	Title_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+	Title_1.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+	Title_1.AnchorPoint = Vector2.new(0.50, 0.50)
+	Title_1.TextSize = 14
+	Title_1.Size = UDim2.new(0.85, 0.00, 0.35, 0.00)
+	Title_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+	Title_1.Text = "Shop"
+	Title_1.TextColor3 = Color3.new(1.00, 1.00, 1.00)
+	Title_1.BackgroundTransparency = 1
+	Title_1.Position = UDim2.new(0.50, 0.00, 0.55, 0.00)
+	Title_1.Parent = ShopBT
+	
+	local UIStroke_1 = Instance.new("UIStroke")
+	UIStroke_1.Color = Color3.new(0.05, 0.05, 0.05)
+	UIStroke_1.Thickness = 2
+	UIStroke_1.Transparency = 0.30000001192092896
+	UIStroke_1.Parent = Title_1
+	
+	local UIGradient_1 = Instance.new("UIGradient")
+	UIGradient_1.Color = ColorSequence.new(ColorSequenceKeypoint.new(0.00, Color3.new(1.00, 1.00, 1.00)), ColorSequenceKeypoint.new(1.00, Color3.new(0.00, 0.00, 0.00)))
+	UIGradient_1.Rotation = 90
+	UIGradient_1.Parent = ShopBT
+	
+	local Notification_1 = Instance.new("Frame")
+	Notification_1.Name = "Notification"
+	Notification_1.Visible = false
+	Notification_1.AnchorPoint = Vector2.new(1.00, 0.00)
+	Notification_1.Size = UDim2.new(0.25, 0.00, 0.25, 0.00)
+	Notification_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+	Notification_1.Position = UDim2.new(1.10, 0.00, -0.05, 0.00)
+	Notification_1.BorderSizePixel = 0
+	Notification_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+	Notification_1.Parent = ShopBT
+	
+	local UIAspectRatioConstraint_1 = Instance.new("UIAspectRatioConstraint")
+	UIAspectRatioConstraint_1.Parent = Notification_1
+	
+	local UICorner_1 = Instance.new("UICorner")
+	UICorner_1.CornerRadius = UDim.new(0.50, 0.00)
+	UICorner_1.Parent = Notification_1
+	
+	local Title_1 = Instance.new("TextLabel")
+	Title_1.Name = "Title"
+	Title_1.TextWrapped = true
+	Title_1.BorderSizePixel = 0
+	Title_1.TextScaled = true
+	Title_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+	Title_1.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+	Title_1.AnchorPoint = Vector2.new(0.50, 0.50)
+	Title_1.TextSize = 14
+	Title_1.Size = UDim2.new(0.85, 0.00, 0.90, 0.00)
+	Title_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+	Title_1.Text = "!"
+	Title_1.TextColor3 = Color3.new(1.00, 1.00, 1.00)
+	Title_1.BackgroundTransparency = 1
+	Title_1.Position = UDim2.new(0.50, 0.00, 0.50, 0.00)
+	Title_1.Parent = Notification_1
+	
+	local UIStroke_1 = Instance.new("UIStroke")
+	UIStroke_1.Color = Color3.new(0.37, 0.00, 0.00)
+	UIStroke_1.Thickness = 2
+	UIStroke_1.Transparency = 0.30000001192092896
+	UIStroke_1.Parent = Notification_1
+	
+	local UIStroke_1 = Instance.new("UIStroke")
+	UIStroke_1.Color = Color3.new(1.00, 1.00, 1.00)
+	UIStroke_1.Thickness = 1.7999999523162842
+	UIStroke_1.Transparency = 0.6499999761581421
+	UIStroke_1.Parent = Notification_1
+	
+	local UIGradient_1 = Instance.new("UIGradient")
+	UIGradient_1.Color = ColorSequence.new(ColorSequenceKeypoint.new(0.00, Color3.new(0.55, 0.21, 0.21)), ColorSequenceKeypoint.new(1.00, Color3.new(1.00, 0.22, 0.22)))
+	UIGradient_1.Rotation = 90
+	UIGradient_1.Parent = Notification_1
+	
+	local Button_1 = Instance.new("TextButton")
+	Button_1.Name = "Button"
+	Button_1.BorderSizePixel = 0
+	Button_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+	Button_1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+	Button_1.AnchorPoint = Vector2.new(0.50, 0.50)
+	Button_1.TextSize = 14
+	Button_1.Size = UDim2.new(1.00, 0.00, 1.00, 0.00)
+	Button_1.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+	Button_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+	Button_1.Text = ""
+	Button_1.BackgroundTransparency = 1
+	Button_1.Position = UDim2.new(0.50, 0.00, 0.50, 0.00)
+	Button_1.Parent = ShopBT
+	
 			STARTER PLAYER:
 				local StarterPlayer = game:GetService("StarterPlayer")
 
