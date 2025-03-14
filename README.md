@@ -1,4 +1,4 @@
-			WORKPLACE "MAP"
+			--WORKSPACE "MAP"
 			local Map = Instance.new("Folder")
 			Map.Name = "Map"
 			Map.Parent = game:GetService("Workspace")
@@ -44,7 +44,7 @@
 			Texture.Texture = "rbxassetid://6794119868"
 			Texture.Parent = Center
 
-			WORKPLACE "PLOTS"
+			--WORKPLACE "PLOTS"
 			local Plots = Instance.new("Folder")
 			Plots.Name = "Plots"
 			Plots.Parent = game:GetService("Workspace")
@@ -297,7 +297,7 @@
 			RobuxButtons_1.Name = "RobuxButtons"
 			RobuxButtons_1.Parent = __1
 
-			WORPLACE Script "README" (Disabled)
+			--WORPLACE Script "README" (Disabled)
 	--[[
 	--=MORE UPGRADES=--
 	Go to: ReplicatedStorage > TemplatePlot,
@@ -321,7 +321,7 @@
 	]]
 
 
-			WORKPLACE "Spawn Location"
+			--WORKPLACE "Spawn Location"
 			local SpawnLocation = Instance.new("SpawnLocation")
 			SpawnLocation.Anchored = true
 			SpawnLocation.BottomSurface = Enum.SurfaceType.Smooth
@@ -336,7 +336,7 @@
 
 			From me: just so you know here is what i mean by how it looks from the code converter:
 
-				REPLICATED STORAGE (second photo as example) "GAME SETTINGS": 
+				--REPLICATED STORAGE (second photo as example) "GAME SETTINGS": 
 				local Game_Settings = Instance.new("Folder")
 			Game_Settings.Name = "Game Settings"
 			Game_Settings.Parent = game:GetService("ReplicatedStorage")
@@ -365,7 +365,7 @@
 			RebirthPrice.Value = 20000
 			RebirthPrice.Parent = Balancing
 
-			REPLICATED STORAGE (second photo as example) "GAMEPASS ID's": 
+			--REPLICATED STORAGE (second photo as example) "GAMEPASS ID's": 
 				local GamepassIds = Instance.new("Folder")
 			GamepassIds.Name = "GamepassIds"
 			GamepassIds.Parent = game:GetService("ReplicatedStorage")
@@ -395,7 +395,7 @@
 			DoubleMoney.Value = 933789599
 			DoubleMoney.Parent = GamepassIds
 
-			REPLICATED STORAGE (second photo as example) "REMOTE EVENTS": 
+			--REPLICATED STORAGE (second photo as example) "REMOTE EVENTS": 
 				local RemoteEvents = Instance.new("Folder")
 			RemoteEvents.Name = "RemoteEvents"
 			RemoteEvents.Parent = game:GetService("ReplicatedStorage")
@@ -404,7 +404,7 @@
 			BuyRebirth.Name = "BuyRebirth"
 			BuyRebirth.Parent = RemoteEvents
 
-			REPLICATED STORAGE (second photo as example) "TEMPLATE PLOT": 
+			--REPLICATED STORAGE (second photo as example) "TEMPLATE PLOT": 
 				local TemplatePlot = Instance.new("Folder")
 			TemplatePlot.Name = "TemplatePlot"
 			TemplatePlot.Parent = game:GetService("ReplicatedStorage")
@@ -3016,7 +3016,7 @@
 			Amount_1.Parent = __1
 
 
-			REPLICATED STORAGE (MODULE SCRIPTS) "MULTIPLIERS"
+			--REPLICATED STORAGE (MODULE SCRIPTS) "MULTIPLIERS"
 			-- In this module you can edit the multiplier's in game.
 
 			local Multipliers = {}
@@ -3054,7 +3054,7 @@
 			
 			
 
-			REPLICATED STORAGE (MODULE SCRIPTS) "SHORT"
+			--REPLICATED STORAGE (MODULE SCRIPTS) "SHORT"
 			-- i will one day optimize this module
 
 			local Module = {}
@@ -3117,7 +3117,7 @@
 
 			return Module
 			
-			REPLICATED STORAGE (MODULE SCRIPTS) "STAT"
+			--REPLICATED STORAGE (MODULE SCRIPTS) "STAT"
 	--[[
 	HOW TO USE THIS MODULE
 	
@@ -3213,7 +3213,7 @@
 			return Stat
 			
 			
-			SERVERSCRIPTSERVICE:
+			--SERVERSCRIPTSERVICE:
 				local ServerScriptService = game:GetService("ServerScriptService")
 
 			local leaderstats = Instance.new("Script")
@@ -3541,7 +3541,7 @@
 			Script_1.Source = "-- Scripted by emblazes, rescripted by LucaDaBoy\n\n--// Services\nlocal Players = game:GetService(\'Players\')\n\n--// Variables\nlocal GravityCoil = script.Parent\nlocal Handle = GravityCoil.Handle\n\n\nlocal Sounds = {CoilSound = Handle.CoilSound,}\n\nlocal Gravity = 196.20\nlocal JumpHeightPercentage = 0.25\n\nlocal ToolEquipped = false\n\n--// Functions\nfunction GetAllConnectedParts(Object)\n	local Parts = {}\n	local function GetConnectedParts(Object)\n		for i, v in Object:GetConnectedParts() do\n			local Ignore = false\n			for ii, vv in Parts do\n				if v == vv then\n					Ignore = true\n				end\n			end\n			if not Ignore then\n				table.insert(Parts, v)\n				GetConnectedParts(v)\n			end\n		end\n	end\n	GetConnectedParts(Object)\n	return Parts\nend\n\nfunction SetGravityEffect()\n	if not GravityEffect or not GravityEffect.Parent then\n		GravityEffect = Instance.new(\'BodyForce\')\n		GravityEffect.Name = \'GravityCoilEffect\'\n		GravityEffect.Parent = Torso\n	end\n	\n	local TotalMass = 0\n	local ConnectedParts = GetAllConnectedParts(Torso)\n	\n	for _,v in ConnectedParts do\n		if v:IsA(\'BasePart\') then\n			TotalMass = (TotalMass + v:GetMass())\n		end\n	end\n	\n	local TotalMass = (TotalMass * 196.20 * (1 - JumpHeightPercentage))\n	GravityEffect.force = Vector3.new(0, TotalMass, 0)\nend\n\nfunction HandleGravityEffect(Enabled)\n	if not CheckIfAlive() then return end\n	\n	for _,v in Torso:GetChildren() do\n		if v:IsA(\'BodyForce\') then\n			v:Destroy()\n		end\n	end\n	\n	if not Enabled then return end\n\n	local CurrentlyEquipped = true\n	\n	GravityCoil.Unequipped:connect(function()\n		CurrentlyEquipped = false\n	end)\n	\n	SetGravityEffect()\n	\n	Character.DescendantAdded:connect(function()\n		task.wait()\n		if not CurrentlyEquipped or not CheckIfAlive() then\n			return\n		end\n		SetGravityEffect()\n	end)\n	\n	Character.DescendantRemoving:connect(function()\n		task.wait()\n		if not CurrentlyEquipped or not CheckIfAlive() then\n			return\n		end\n		SetGravityEffect()\n	end)\nend\n\nfunction CheckIfAlive()\n	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Torso and Torso.Parent and Player and Player.Parent) and true) or false)\nend\n\nfunction Equipped(Mouse)\n	Character = GravityCoil.Parent\n	Humanoid = Character:FindFirstChild(\'Humanoid\')\n	Torso = Character:FindFirstChild(\'Torso\') or Character:FindFirstChild(\'UpperTorso\')\n	Player = Players:GetPlayerFromCharacter(Character)\n	\n	if not CheckIfAlive() then\n		return\n	end\n	if HumanoidDied then\n		HumanoidDied:Disconnect()\n	end\n	HumanoidDied = Humanoid.Died:connect(function()\n		if GravityEffect and GravityEffect.Parent then\n			GravityEffect:Destroy()\n		end\n	end)\n	Sounds.CoilSound:Play()\n	HandleGravityEffect(true)\n	ToolEquipped = true\nend\n\nfunction Unequipped()\n	if HumanoidDied then\n		HumanoidDied:Disconnect()\n	end\n	HandleGravityEffect(false)\n	ToolEquipped = false\nend\n\n--// Main\nGravityCoil.Equipped:connect(Equipped)\nGravityCoil.Unequipped:connect(Unequipped)"
 			Script_1.Parent = GravityCoil
 
-			STARTERGUI:
+			--STARTGUI:
 				local StarterGui = game:GetService("StarterGui")
 
 			local Interface = Instance.new("ScreenGui")
@@ -4640,4 +4640,3 @@
 			Reward.Name = "Reward"
 			Reward.SoundId = "rbxassetid://1210852193"
 			Reward.Parent = Client
-
